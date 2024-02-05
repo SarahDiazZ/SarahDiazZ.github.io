@@ -19,19 +19,44 @@
     padding: 20px;
     flex-grow: 1;
   }
-
-  .container {
-    display: flex;
-    height: 100vh;
+  .topnav {
+    background-color: black;
+    overflow: hidden;
   }
 
-  .sidebar {
+  .topnav a {
+    float: right;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 10px;
+  }
+
+  /*Changes color of navbar thing*/
+  .topnav a:hover {
+    background-color: #FCF4A3;
+    color: white;
+  }
+
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  /* .container {
+    display: flex;
+    height: 100vh;
+  } */
+
+  /* .sidebar {
     width: 250px;
     background-color: darkgray;
     padding: 20px;
     color: white;
     margin: 20px;
-  }
+  } */
 /* 
   .content {
     flex-grow: 1;
