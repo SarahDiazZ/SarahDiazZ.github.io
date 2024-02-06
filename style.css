@@ -20,7 +20,16 @@
     flex-grow: 1;
   }
   .topnav {
-    background-color: black;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: hsla(240, 1%, 17%, 0.75); /*sets the Hue, saturation, lightness, and alpha*/
+    backdrop-filter: blur(10px);
+    border: 1px solid(hsl(0, 0%, 22%));
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 16px 30px hsla(0, 0%, 0%, alpha);
+
+    /* background-color: rgb(34, 33, 33); */
     overflow: hidden;
   }
 
@@ -31,35 +40,15 @@
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-    border-radius: 10px;
+    
   }
 
   /*Changes color of navbar thing*/
-  .topnav a:hover {
+  /* .topnav a:hover {
     background-color: #FCF4A3;
     color: white;
-  }
+  } */
 
   .topnav a.active {
-    background-color: #04AA6D;
-    color: white;
+    color: #f8d568;
   }
-
-  /* .container {
-    display: flex;
-    height: 100vh;
-  } */
-
-  /* .sidebar {
-    width: 250px;
-    background-color: darkgray;
-    padding: 20px;
-    color: white;
-    margin: 20px;
-  } */
-/* 
-  .content {
-    flex-grow: 1;
-    padding: 20px;
-    background-color: #f4f4f4;
-  } */
