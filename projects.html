@@ -10,3 +10,34 @@
     <a class="active" href="projects.html">Projects</a>
     <a href="index.html">About</a>
 </div>
+<!-- 
+<body>
+    <div id="projects"></div>
+
+    <script>
+        // Replace 'YOUR_GITHUB_USERNAME' with your actual GitHub username
+        const username = 'SarahDiazZ';
+        // Replace 'YOUR_ACCESS_TOKEN' with your actual GitHub access token
+        const accessToken = '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';
+        
+        // Fetch repositories from GitHub API
+        fetch(`https://api.github.com/users/$SarahDiazZ/repos?access_token=$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`)
+            .then(response => response.json())
+            .then(data => {
+                const projectsContainer = document.getElementById('projects');
+                data.forEach(repo => {
+                    const repoElement = document.createElement('div');
+                    repoElement.innerHTML = `
+                        <h2>$Wiki-Page</h2>
+                        <p>$This project was made while I was in the Google Tech Exchnage program and I developed the website with two other teammates. We based our website on doing
+                            a how to
+                        </p>
+                        <a href="${repo.html_url}" target="_blank">View on GitHub</a>
+                        <hr>
+                    `;
+                    projectsContainer.appendChild(repoElement);
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+</body> -->
