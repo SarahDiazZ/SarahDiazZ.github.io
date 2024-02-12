@@ -69,3 +69,28 @@
   .manga {
     color: cornflowerblue;
   }
+
+  /*MoviesTV*/
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .list {
+    text-align: center;
+  }
+
+  h1 {
+    margin-bottom: 10px;
+  }
+
+  ol {
+    padding: 0;
+    list-style-type: none;
+  }
+
+  li {
+    margin-bottom: 5px;
+  }
+
