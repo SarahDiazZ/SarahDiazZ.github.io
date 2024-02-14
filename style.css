@@ -34,6 +34,7 @@
     overflow: hidden;
   }
 
+  /*Controls lettering in the navbar*/
   .topnav a {
     float: right;
     color: white;
@@ -44,10 +45,15 @@
     
   }
 
+  /* When a link is clicked on the navbar it will show as yellow to 
+     let the user know what tab they're on 
+   */
   .topnav a.active {
     color: #f8d568;
   }
 
+  /* Controls the resume download button
+   */
   .Resume {
     background-color: #3498DB;
     color: white;
@@ -55,11 +61,16 @@
   }
 
   /*MoviesTV*/
+
+  /* Controls how the images are displayed
+   */
   #griddy {
     display: flex;
     flex-wrap: wrap;
   }
 
+  /* Controls the size of the area that the image is on 
+   */
   .grid-item {
     width: 100px;
     height: 150px;
@@ -67,10 +78,15 @@
     padding: 15px;
   }
 
+  /* Controls the dimensions of the image
+   */
   .grid-item > img {
     width: 100px;
     height: 150px;
   }
+
+  /* Colors of the headers
+   */
 
   .fav-movies {
     color: #B0C4DE;
@@ -89,16 +105,24 @@
   }
 
   /*Contact page*/
+
+  /* Controls the size of the phone, email, and LinkedIn logo
+   */
   img {
     display: block;
     padding: 10px;
   }
 
+  /* Sets the color of the links
+   */
   a {
     color: cornsilk;
   }
 
   /*Hobbies*/
+
+  /* Makes the images be a circle 
+   */
   .archery {
     border-radius: 50%;
   }
@@ -115,11 +139,16 @@
     border-radius: 50%;
   }
 
+  /* Controls how the images are displayed
+   */
   #grid {
     display: flex;
     flex-wrap: wrap;
   }
 
+  /* Controls the size of the area that the image is on. This has a bigger size so the text doesn't overlap
+    the other images when on a mobile device. So the grid will account for the text AND the image.
+   */
   .grid-item2 {
     width: 300px;
     height: 550px;
@@ -127,12 +156,17 @@
     padding: 15px;
   }
 
+  /* Controls the dimensions of the image
+   */
   .grid-item2 > img {
     width: 300px;
     height: 300px;
   }
 
   /*Projects*/
+
+  /* Controls the dimensions of the images
+   */
   #image {
     width: 450px;
     height: 250px;
@@ -140,35 +174,42 @@
     padding: 15px;
   }
 
+  /* Sets the color of the text in the button
+   */
   #project {
     color: black;
   }
 
-  /*Smaller screen*/
+  /*Media query for screens up to 800px wide*/
   @media only screen and (max-width: 800px) {
+    /* Set width of all columns to 100% */
     .column {
       width: 100%;
     }
 
+    /* Set width of grid items to 50% */
     .grid-item {
       width: 50%;
     }
 
+    /* Style for grid items */
     .grid-item2 {
-      width: 100%;
-      margin: 10px 0;
-      padding: 10px;
-      box-sizing: border-box;
-      overflow: hidden;
+      width: 100%; /* Make grid item fill the column */
+      margin: 10px 0; /* Add space around the grid item */
+      padding: 10px; /* Add padding inside the grid item */
+      box-sizing: border-box; /* Include padding and border in width */
+      overflow: hidden; /* Hide any content that overflows */
       text-align: center; /* Center the text */
     }
   
+     /* Style for images inside grid items */
     .grid-item2 > img {
       width: 100%; /* Make the image fill the container */
       height: auto; /* Maintain aspect ratio */
-      margin-bottom: 10px;
+      margin-bottom: 10px; /* Add space below the image */
     }
   
+    /* Style for text inside grid items */
     .grid-item2 > h4,
     .grid-item2 > p {
       max-width: 100%; /* Ensure text doesn't exceed image width */
