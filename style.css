@@ -19,6 +19,7 @@
     padding: 20px;
     flex-grow: 1;
   }
+
   .topnav {
     bottom: 0;
     left: 0;
@@ -43,54 +44,134 @@
     
   }
 
-  /*Changes color of navbar thing*/
-  /* .topnav a:hover {
-    background-color: #FCF4A3;
-    color: white;
-  } */
-
   .topnav a.active {
     color: #f8d568;
   }
 
-  /*Hobbies page*/
-  .archery {
-    color: aquamarine;
-  }
-
-  .video-games {
-    color: cadetblue;
-  }
-
-  .legos {
-    color: yellow;
-  }
-
-  .manga {
-    color: cornflowerblue;
+  .Resume {
+    background-color: #3498DB;
+    color: white;
+    border-radius: 2px;
   }
 
   /*MoviesTV*/
-  .container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+  #griddy {
+    display: flex;
+    flex-wrap: wrap;
   }
 
-  .list {
-    text-align: center;
+  .grid-item {
+    width: 100px;
+    height: 150px;
+    margin: 5px;
+    padding: 15px;
   }
 
-  h1 {
-    margin-bottom: 10px;
+  .grid-item > img {
+    width: 100px;
+    height: 150px;
   }
 
-  ol {
-    padding: 0;
-    list-style-type: none;
+  .fav-movies {
+    color: #B0C4DE;
   }
 
-  li {
-    margin-bottom: 5px;
+  .fav-shows {
+    color: #B0C4DE;
   }
 
+  .fav-anime {
+    color: #B0C4DE;
+  }
+
+  .currently {
+    color: #B0C4DE;
+  }
+
+  /*Contact page*/
+  img {
+    display: block;
+    padding: 10px;
+  }
+
+  a {
+    color: cornsilk;
+  }
+
+  /*Hobbies*/
+  .archery {
+    border-radius: 50%;
+  }
+
+  .games {
+    border-radius: 50%;
+  }
+
+  .legos {
+    border-radius: 50%;
+  }
+
+  .manga {
+    border-radius: 50%;
+  }
+
+  #grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .grid-item2 {
+    width: 300px;
+    height: 550px;
+    margin: 5px;
+    padding: 15px;
+  }
+
+  .grid-item2 > img {
+    width: 300px;
+    height: 300px;
+  }
+
+  /*Projects*/
+  #image {
+    width: 450px;
+    height: 250px;
+    margin: 5px;
+    padding: 15px;
+  }
+
+  #project {
+    color: black;
+  }
+
+  /*Smaller screen*/
+  @media only screen and (max-width: 800px) {
+    .column {
+      width: 100%;
+    }
+
+    .grid-item {
+      width: 50%;
+    }
+
+    .grid-item2 {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      box-sizing: border-box;
+      overflow: hidden;
+      text-align: center; /* Center the text */
+    }
+  
+    .grid-item2 > img {
+      width: 100%; /* Make the image fill the container */
+      height: auto; /* Maintain aspect ratio */
+      margin-bottom: 10px;
+    }
+  
+    .grid-item2 > h4,
+    .grid-item2 > p {
+      max-width: 100%; /* Ensure text doesn't exceed image width */
+    }
+
+  }
