@@ -1,43 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" href="style.css">
+<title>Projects</title>
+<link rel="icon" type="image/x-icon" href="./Images/amongus.jpeg">
 
-<div class="topnav">
-    <!--NAVBAR-->
-    <a href="contact.html">Contact Me</a>
-    <a href="moviestv.html">Movies and TV Shows</a>
-    <a href="hobbies.html">Hobbies</a>
-    <a class="active" href="projects.html">Projects</a>
-    <a href="index.html">About</a>
-</div>
-<!-- 
-<body>
-    <div id="projects"></div>
+<header>
+    <h2 style="text-align: center;">Sarah's Corner of the Web</h2>
+</header>
 
-    <script>
-        // Replace 'YOUR_GITHUB_USERNAME' with your actual GitHub username
-        const username = 'SarahDiazZ';
-        // Replace 'YOUR_ACCESS_TOKEN' with your actual GitHub access token
-        const accessToken = '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';
-        
-        // Fetch repositories from GitHub API
-        fetch(`https://api.github.com/users/$SarahDiazZ/repos?access_token=$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`)
-            .then(response => response.json())
-            .then(data => {
-                const projectsContainer = document.getElementById('projects');
-                data.forEach(repo => {
-                    const repoElement = document.createElement('div');
-                    repoElement.innerHTML = `
-                        <h2>$Wiki-Page</h2>
-                        <p>$This project was made while I was in the Google Tech Exchnage program and I developed the website with two other teammates. We based our website on doing
-                            a how to
-                        </p>
-                        <a href="${repo.html_url}" target="_blank">View on GitHub</a>
-                        <hr>
-                    `;
-                    projectsContainer.appendChild(repoElement);
-                });
-            })
-            .catch(error => console.error('Error fetching data:', error));
-    </script>
-</body> -->
+    <div class="topnav">
+        <!--NAVBAR-->
+        <a href="contact.html">Contact Me</a>
+        <a href="moviestv.html">Movies and TV Shows</a>
+        <a href="hobbies.html">Hobbies</a>
+        <a class="active" href="projects.html">Projects</a>
+        <a href="index.html">About</a>
+    </div>
+
+    <body>
+        <h3>Wiki Page</h3>
+        <p>
+            This project was made during my time in the Google Tech Exchange program. We made a wiki site where we explained
+            how to build a PC step-by-step. Users were able to use the FAQ page to post their questions and reply. The could also
+            add their own pages and get inspiration from our slideshow of PC images.
+        </p>
+        <a href="https://github.com/SarahDiazZ/Wiki-Page">
+            <img id="image" src="./Images/Projects/GoogleProject.png">
+        </a>
+        <button id="project" href="https://github.com/SarahDiazZ/Wiki-Page">View Project</button>
+        <hr>
+
+        <h3>FrostFyte</h3>
+        <p>
+            I contributed to a game named FrostFyte where we based it on super smash bros and mortal kombat. We made our own sprites
+            and our own stages and it was a multiplayer game.
+        </p>
+        <a href="https://github.com/SarahDiazZ/FrostFyte_Project">
+            <img id="image" src="./Images/Projects/FrostFyte.png">
+        </a>
+        <button id="project" href="https://github.com/SarahDiazZ/FrostFyte_Project">View Project</button>
+        <hr>
+
+        <h3>CMINUS Compiler</h3>
+        <p>
+            The compiler will be able to compile basic CMINUS language using YACC and LEX.
+        </p>
+        <p>This project is in progress</p>
+        <button id="project" href="https://github.com/SarahDiazZ/CMINUS-Compiler">View Project</button>
+        <hr>
+    </body>
+
+    <footer>
+        <p>Author: Sarah Diaz</p>
+        <p><a href="mailto:diazsarah30@gmail.com">diazsarah30@gmail.com</a></p>
+    </footer>
+</html>
