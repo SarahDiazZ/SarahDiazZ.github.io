@@ -1,66 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Sarah Diaz</title>
+  <link rel="icon" type="image/jpeg" href="./Images/memoji.jpeg">
 
-<!--Connects to the CSS style doc-->
-<link rel="stylesheet" href="style.css">
+  <!-- Tailwind CSS (Play CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
 
-<!--Changes the title of the browser tab and the image displayed on the browser tab-->
-<title>Projects</title>
-<link rel="icon" type="image/x-icon" href="./Images/amongus.jpeg">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!--Header should show up in the center of the website above the navbar-->
-<header>
-    <h2 style="text-align: center;">Sarah's Corner of the Web</h2>
-</header>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#0a0e1a] text-gray-100 font-sans antialiased">
 
-    <div class="topnav">
-        <!--NAVBAR-->
-        <a href="contact.html">Contact Me</a>
-        <a href="moviestv.html">Movies and TV Shows</a>
-        <a href="hobbies.html">Hobbies</a>
-        <a class="active" href="projects.html">Projects</a>
-        <a href="index.html">About</a>
+  <!-- ── Navbar ──────────────────────────────────────────────────────────── -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0a0e1a]/90 backdrop-blur-md border-b border-gray-800/40">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-white font-semibold text-lg tracking-tight hover:text-indigo-400 transition-colors">
+        Sarah Diaz
+      </a>
+
+      <!-- Desktop links -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html"    data-nav="index.html"    class="nav-link text-sm font-medium">About</a>
+        <a href="projects.html" data-nav="projects.html" class="nav-link text-sm font-medium">Projects</a>
+        <a href="contact.html"  data-nav="contact.html"  class="nav-link text-sm font-medium">Contact</a>
+        <a href="https://github.com/SarahDiazZ" target="_blank" rel="noopener" class="nav-link" aria-label="GitHub">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button id="menu-btn" class="md:hidden text-gray-400 hover:text-white p-1 transition-colors" aria-label="Toggle menu">
+        <svg id="hamburger-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg id="close-icon" class="hidden" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
     </div>
 
-    <body>
-        <h3>Wiki Page</h3>
-        <p>
-            This project was made during my time in the Google Tech Exchange program. We made a wiki site where we explained
-            how to build a PC step-by-step. Users were able to use the FAQ page to post their questions and reply. The could also
-            add their own pages and get inspiration from our slideshow of PC images.
-        </p>
-        <!--If the image is clicked it will take the user to the respective project github repository-->
-        <a href="https://github.com/SarahDiazZ/Wiki-Page">
-            <img id="image" src="./Images/Projects/GoogleProject.png">
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-800/40 bg-[#0a0e1a]">
+      <div class="max-w-5xl mx-auto px-6 py-5 flex flex-col gap-5">
+        <a href="index.html"    class="text-gray-400 hover:text-white text-sm font-medium transition-colors">About</a>
+        <a href="projects.html" class="text-gray-400 hover:text-white text-sm font-medium transition-colors">Projects</a>
+        <a href="contact.html"  class="text-gray-400 hover:text-white text-sm font-medium transition-colors">Contact</a>
+        <a href="https://github.com/SarahDiazZ" target="_blank" rel="noopener" class="text-gray-400 hover:text-white text-sm font-medium transition-colors">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Page Header ─────────────────────────────────────────────────────── -->
+  <section class="pt-36 pb-16 px-6 relative overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+      <div class="absolute -top-20 right-0 w-96 h-96 bg-indigo-700/15 rounded-full blur-3xl"></div>
+    </div>
+    <div class="max-w-5xl mx-auto relative z-10">
+      <p class="text-indigo-400 text-sm font-medium tracking-[0.2em] uppercase mb-3"
+         style="animation: fadeIn 0.6s 0.1s both;">
+        Portfolio
+      </p>
+      <h1 class="text-5xl sm:text-6xl font-extrabold text-white mb-4 tracking-tight"
+          style="animation: fadeUp 0.7s 0.2s both;">
+        My Projects
+      </h1>
+      <p class="text-gray-400 text-lg max-w-xl"
+         style="animation: fadeUp 0.7s 0.35s both;">
+        A collection of things I've built — from games to compilers to full-stack apps.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Project Cards ───────────────────────────────────────────────────── -->
+  <section class="pb-24 px-6">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Wiki Page -->
+      <div class="reveal bg-[#111827] border border-gray-800/80 rounded-xl overflow-hidden
+                  hover:border-indigo-500/50 hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-900/20
+                  transition-all duration-300 group flex flex-col">
+        <a href="https://github.com/SarahDiazZ/Wiki-Page" target="_blank" rel="noopener" class="block overflow-hidden">
+          <img src="./Images/Projects/GoogleProject.png" alt="Wiki Page project screenshot" class="project-img group-hover:scale-105 transition-transform duration-500">
         </a>
+        <div class="p-6 flex flex-col flex-1">
+          <h2 class="text-white font-semibold text-lg mb-2 group-hover:text-indigo-300 transition-colors">Wiki Page</h2>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4 flex-1">
+            A full-stack wiki site built during the Google Tech Exchange Program. Users can browse a step-by-step
+            PC building guide, post questions on the FAQ page, add their own pages, and browse a slideshow of PC builds.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">JavaScript</span>
+          </div>
+          <a href="https://github.com/SarahDiazZ/Wiki-Page" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 text-sm font-medium transition-colors">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+            </svg>
+            View on GitHub
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="opacity-60">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+          </a>
+        </div>
+      </div>
 
-        <!--User can also click a button to take them to the project repository-->
-        <button id="project" href="https://github.com/SarahDiazZ/Wiki-Page">View Project</button>
-        <hr>
-
-        <h3>FrostFyte</h3>
-        <p>
-            I contributed to a game named FrostFyte where we based it on super smash bros and mortal kombat. We made our own sprites
-            and our own stages and it was a multiplayer game.
-        </p>
-        <a href="https://github.com/SarahDiazZ/FrostFyte_Project">
-            <img id="image" src="./Images/Projects/FrostFyte.png">
+      <!-- FrostFyte -->
+      <div class="reveal bg-[#111827] border border-gray-800/80 rounded-xl overflow-hidden
+                  hover:border-indigo-500/50 hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-900/20
+                  transition-all duration-300 group flex flex-col">
+        <a href="https://github.com/SarahDiazZ/FrostFyte_Project" target="_blank" rel="noopener" class="block overflow-hidden">
+          <img src="./Images/Projects/FrostFyte.png" alt="FrostFyte game screenshot" class="project-img group-hover:scale-105 transition-transform duration-500">
         </a>
-        <button id="project" href="https://github.com/SarahDiazZ/FrostFyte_Project">View Project</button>
-        <hr>
+        <div class="p-6 flex flex-col flex-1">
+          <h2 class="text-white font-semibold text-lg mb-2 group-hover:text-indigo-300 transition-colors">FrostFyte</h2>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4 flex-1">
+            A multiplayer fighting game inspired by Super Smash Bros and Mortal Kombat, complete with custom-designed
+            sprites, original stages, and local two-player support.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Pygame</span>
+            <span class="skill-tag">Game Design</span>
+          </div>
+          <a href="https://github.com/SarahDiazZ/FrostFyte_Project" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 text-sm font-medium transition-colors">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+            </svg>
+            View on GitHub
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="opacity-60">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+          </a>
+        </div>
+      </div>
 
-        <h3>CMINUS Compiler</h3>
-        <p>
-            The compiler will be able to compile basic CMINUS language using YACC and LEX.
-        </p>
-        <p>This project is in progress</p>
-        <button id="project" href="https://github.com/SarahDiazZ/CMINUS-Compiler">View Project</button>
-        <hr>
-    </body>
+      <!-- CMINUS Compiler -->
+      <div class="reveal bg-[#111827] border border-gray-800/80 rounded-xl overflow-hidden
+                  hover:border-indigo-500/50 hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-900/20
+                  transition-all duration-300 group flex flex-col">
+        <!-- Placeholder banner for projects without a screenshot -->
+        <div class="w-full h-[200px] bg-gradient-to-br from-indigo-950 to-[#0c1020] flex items-center justify-center">
+          <svg width="48" height="48" fill="none" stroke="#4f46e5" stroke-width="1.5" viewBox="0 0 24 24" opacity="0.6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+          </svg>
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <h2 class="text-white font-semibold text-lg group-hover:text-indigo-300 transition-colors">CMINUS Compiler</h2>
+            <span class="text-xs bg-amber-950 text-amber-300 border border-amber-800/50 px-2 py-0.5 rounded-full font-medium">In Progress</span>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4 flex-1">
+            A compiler for the CMINUS programming language built with YACC and LEX. Handles lexical analysis,
+            parsing, and basic code generation for a simplified C-like language.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="skill-tag">C</span>
+            <span class="skill-tag">YACC</span>
+            <span class="skill-tag">LEX</span>
+          </div>
+          <a href="https://github.com/SarahDiazZ/CMINUS-Compiler" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 text-sm font-medium transition-colors">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+            </svg>
+            View on GitHub
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="opacity-60">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+          </a>
+        </div>
+      </div>
 
-    <!--Footer should show up at the end of a page-->
-    <footer>
-        <p>Author: Sarah Diaz</p>
-        <p><a href="mailto:diazsarah30@gmail.com">diazsarah30@gmail.com</a></p>
-    </footer>
+    </div>
+  </section>
+
+  <!-- ── Footer ──────────────────────────────────────────────────────────── -->
+  <footer class="border-t border-gray-800/40 py-10 px-6">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-gray-600 text-sm">&copy; 2024 Sarah Diaz</p>
+      <div class="flex items-center gap-6">
+        <a href="mailto:diazsarah30@gmail.com" class="text-gray-500 hover:text-indigo-400 transition-colors text-sm">Email</a>
+        <a href="https://www.linkedin.com/in/sarah-diaz-/" target="_blank" rel="noopener" class="text-gray-500 hover:text-indigo-400 transition-colors text-sm">LinkedIn</a>
+        <a href="https://github.com/SarahDiazZ" target="_blank" rel="noopener" class="text-gray-500 hover:text-indigo-400 transition-colors text-sm">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+</body>
 </html>

@@ -1,218 +1,98 @@
-/* Three image containers (use 25% for four, and 50% for two, etc) */
-.column {
-    float: left;
-    width: 32%;
-    padding: 5px;
-  }
-  
-  /* Clear floats after image containers */
-  .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
+html {
+  scroll-behavior: smooth;
+}
 
-  body {
-    margin: 0;
-    background-color: black;
-    color: white;
-    padding: 20px;
-    flex-grow: 1;
-  }
+/* ── Keyframe animations ──────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
-  .topnav {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: hsla(240, 1%, 17%, 0.75); /*sets the Hue, saturation, lightness, and alpha*/
-    backdrop-filter: blur(10px);
-    border: 1px solid(hsl(0, 0%, 22%));
-    border-radius: 12px 12px 0 0;
-    box-shadow: 0 16px 30px hsla(0, 0%, 0%, alpha);
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
 
-    /* background-color: rgb(34, 33, 33); */
-    overflow: hidden;
-  }
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
 
-  /*Controls lettering in the navbar*/
-  .topnav a {
-    float: right;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    
-  }
+/* ── Hero background grid ─────────────────────────────────────────────── */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(99, 102, 241, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
 
-  /* When a link is clicked on the navbar it will show as yellow to 
-     let the user know what tab they're on 
-   */
-  .topnav a.active {
-    color: #f8d568;
-  }
+/* ── Scroll reveal ────────────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
 
-  /* Controls the resume download button
-   */
-  .Resume {
-    background-color: #3498DB;
-    color: white;
-    border-radius: 2px;
-  }
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-  /*MoviesTV*/
+/* ── Typewriter cursor ────────────────────────────────────────────────── */
+#typewriter::after {
+  content: '|';
+  margin-left: 1px;
+  animation: blink 0.75s step-end infinite;
+  color: #818cf8;
+}
 
-  /* Controls how the images are displayed
-   */
-  #griddy {
-    display: flex;
-    flex-wrap: wrap;
-  }
+/* ── Skill badges ─────────────────────────────────────────────────────── */
+.skill-tag {
+  display: inline-block;
+  background-color: #1a2035;
+  color: #c4c9d4;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.4rem;
+  border: 1px solid #2d3550;
+  transition: border-color 0.2s, color 0.2s;
+  cursor: default;
+  line-height: 1.4;
+}
 
-  /* Controls the size of the area that the image is on 
-   */
-  .grid-item {
-    width: 100px;
-    height: 150px;
-    margin: 5px;
-    padding: 15px;
-  }
+.skill-tag:hover {
+  border-color: rgba(99, 102, 241, 0.55);
+  color: #a5b4fc;
+}
 
-  /* Controls the dimensions of the image
-   */
-  .grid-item > img {
-    width: 100px;
-    height: 150px;
-  }
+/* ── Nav links ────────────────────────────────────────────────────────── */
+.nav-link {
+  color: #9ca3af;
+  transition: color 0.2s;
+}
 
-  /* Colors of the headers
-   */
+.nav-link:hover,
+.nav-link.active-link {
+  color: #f9fafb;
+}
 
-  .fav-movies {
-    color: #B0C4DE;
-  }
+/* ── Project card image fill ──────────────────────────────────────────── */
+.project-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
 
-  .fav-shows {
-    color: #B0C4DE;
-  }
-
-  .fav-anime {
-    color: #B0C4DE;
-  }
-
-  .currently {
-    color: #B0C4DE;
-  }
-
-  /*Contact page*/
-
-  /* Controls the size of the phone, email, and LinkedIn logo
-   */
-  img {
-    display: block;
-    padding: 10px;
-  }
-
-  /* Sets the color of the links
-   */
-  a {
-    color: cornsilk;
-  }
-
-  /*Hobbies*/
-
-  /* Makes the images be a circle 
-   */
-  .archery {
-    border-radius: 50%;
-  }
-
-  .games {
-    border-radius: 50%;
-  }
-
-  .legos {
-    border-radius: 50%;
-  }
-
-  .manga {
-    border-radius: 50%;
-  }
-
-  /* Controls how the images are displayed
-   */
-  #grid {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  /* Controls the size of the area that the image is on. This has a bigger size so the text doesn't overlap
-    the other images when on a mobile device. So the grid will account for the text AND the image.
-   */
-  .grid-item2 {
-    width: 300px;
-    height: 550px;
-    margin: 5px;
-    padding: 15px;
-  }
-
-  /* Controls the dimensions of the image
-   */
-  .grid-item2 > img {
-    width: 300px;
-    height: 300px;
-  }
-
-  /*Projects*/
-
-  /* Controls the dimensions of the images
-   */
-  #image {
-    width: 450px;
-    height: 250px;
-    margin: 5px;
-    padding: 15px;
-  }
-
-  /* Sets the color of the text in the button
-   */
-  #project {
-    color: black;
-  }
-
-  /*Media query for screens up to 800px wide*/
-  @media only screen and (max-width: 800px) {
-    /* Set width of all columns to 100% */
-    .column {
-      width: 100%;
-    }
-
-    /* Set width of grid items to 50% */
-    .grid-item {
-      width: 50%;
-    }
-
-    /* Style for grid items */
-    .grid-item2 {
-      width: 100%; /* Make grid item fill the column */
-      margin: 10px 0; /* Add space around the grid item */
-      padding: 10px; /* Add padding inside the grid item */
-      box-sizing: border-box; /* Include padding and border in width */
-      overflow: hidden; /* Hide any content that overflows */
-      text-align: center; /* Center the text */
-    }
-  
-     /* Style for images inside grid items */
-    .grid-item2 > img {
-      width: 100%; /* Make the image fill the container */
-      height: auto; /* Maintain aspect ratio */
-      margin-bottom: 10px; /* Add space below the image */
-    }
-  
-    /* Style for text inside grid items */
-    .grid-item2 > h4,
-    .grid-item2 > p {
-      max-width: 100%; /* Ensure text doesn't exceed image width */
-    }
-
-  }
+/* ── Contact card icon wrapper ────────────────────────────────────────── */
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: rgba(99, 102, 241, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}

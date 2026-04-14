@@ -1,86 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sarah Diaz — Software Engineer</title>
+  <link rel="icon" type="image/jpeg" href="./Images/memoji.jpeg">
 
-<!--Connects to the CSS style doc-->
-<link rel="stylesheet" href="style.css">
+  <!-- Tailwind CSS (Play CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
 
-<!--Changes the title of the browser tab and the image displayed on the browser tab-->
-<title>About Me</title>
-<link rel="icon" type="image/x-icon" href="./Images/amongus.jpeg">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!--Header should show up in the center of the website above the navbar-->
-<header>
-    <h2 style="text-align: center;">Sarah's Corner of the Web</h2>
-</header>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#0a0e1a] text-gray-100 font-sans antialiased">
 
-<div class="topnav">
-    <!--NAVBAR-->
-    <a href="contact.html">Contact Me</a>
-    <a href="moviestv.html">Movies and TV Shows</a>
-    <a href="hobbies.html">Hobbies</a>
-    <a href="projects.html">Projects</a>
-    <a class="active" href="index.html">About</a>
-</div>
-<body>
-    <!--Controls my pfp, name, and title (CS student)-->
-    <aside class="container">
-        <div class="sidebar">
-            <figure class="pfp">
-                <img src="./Images/memoji.jpeg" alt="Sarah Diaz" width="80">
-            </figure>
+  <!-- ── Navbar ──────────────────────────────────────────────────────────── -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0a0e1a]/90 backdrop-blur-md border-b border-gray-800/40">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-white font-semibold text-lg tracking-tight hover:text-indigo-400 transition-colors">
+        Sarah Diaz
+      </a>
 
-            <div class="Info">
-                <h1 class="name" title="Sarah Diaz">Sarah Diaz</h1>
-                <p class="title">Computer Science Student</p>
-                <a href="./Images/SarahDiaz_CompSci_2024.pdf" download="SarahDiaz_CompSci_2024.pdf">
-                    <button class="Resume">Download My Resume</button>
-                </a>
-            </div>
-        </div>
-    </aside>
+      <!-- Desktop links -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html"    data-nav="index.html"    class="nav-link text-sm font-medium">About</a>
+        <a href="projects.html" data-nav="projects.html" class="nav-link text-sm font-medium">Projects</a>
+        <a href="contact.html"  data-nav="contact.html"  class="nav-link text-sm font-medium">Contact</a>
+        <a href="https://github.com/SarahDiazZ" target="_blank" rel="noopener" class="nav-link" aria-label="GitHub">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+          </svg>
+        </a>
+      </div>
 
-    
-    <!--Controls the about me section and images-->
-    <div class="about-me">
-        <header>
-            <h2>About Me</h2>
-        </header>
-        <section class="about-me-content">
-            <p> I am pursuing a Computer Science degree at New Mexico State University. During my time at NMSU I've participated
-                in the coding competitions hosted by Google Student Developer Club where my team and I won first place. I also have gone
-                to Pasadena, California to attend the Great Minds in STEM conference where I participated in a hackathon that involved 
-                cracking hashed passwords, and using Wireshark to sniff packets. I was also in the Google Tech Exchange Program where I 
-                took courses taught by senior software engineers and learned industry-standard tools and technologies. This past summer 
-                I traveled to Virginia to work at my first internship with the US Army DEVCOM C5ISR center where I worked on mixed reality
-                HoloLenses. This was to improve the training of our Army soldiers allowing them to practice in a simulated environment.
-            </p>
-
-            <!--Makes the images show up next to each other instead of under each other-->
-            <div class="row">
-                <div class="column">
-                    <h5>SDS Group from Google TechX!</h5>
-                    <img src="./Images/SDS_Group.jpg" alt="SDS_Group" style="width: 100%;">
-                </div>
-                <div class="column">
-                    <h5>NMSU Group at the Seattle space needle!</h5>
-                    <img src="./Images/NMSU_Group.jpg" alt="NMSU_Group" style="width: 100%;">
-                </div>
-                <div class="column">
-                    <h5>Tech Exchnage group photo at the main campus of Google in Mountain View!</h5>
-                    <img src="./Images/GoogleTechx.jpeg" alt="GoogleTechx" style="width: 100%;"> 
-                </div>
-                <div class="column">
-                    <img src="./Images/Intern_Group.jpeg" alt="Intern_Group" style="width: 100%;">
-                    <h5>Intern Group in Virginia!</h5>
-                </div>
-            </div>
-        </section>
+      <!-- Mobile hamburger -->
+      <button id="menu-btn" class="md:hidden text-gray-400 hover:text-white p-1 transition-colors" aria-label="Toggle menu">
+        <svg id="hamburger-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg id="close-icon" class="hidden" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
     </div>
-</body>
 
-    <!--Footer should show up at the end of a page-->
-    <footer>
-        <p>Author: Sarah Diaz</p>
-        <p><a href="mailto:diazsarah30@gmail.com">diazsarah30@gmail.com</a></p>
-    </footer>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-800/40 bg-[#0a0e1a]">
+      <div class="max-w-5xl mx-auto px-6 py-5 flex flex-col gap-5">
+        <a href="index.html"    class="text-gray-400 hover:text-white text-sm font-medium transition-colors">About</a>
+        <a href="projects.html" class="text-gray-400 hover:text-white text-sm font-medium transition-colors">Projects</a>
+        <a href="contact.html"  class="text-gray-400 hover:text-white text-sm font-medium transition-colors">Contact</a>
+        <a href="https://github.com/SarahDiazZ" target="_blank" rel="noopener" class="text-gray-400 hover:text-white text-sm font-medium transition-colors">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Hero ────────────────────────────────────────────────────────────── -->
+  <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <!-- Glow blobs -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+      <div class="absolute -top-32 -left-32 w-[500px] h-[500px] bg-indigo-700/20 rounded-full blur-3xl"></div>
+      <div class="absolute top-1/2 -right-24 w-80 h-80 bg-violet-700/15 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-16 left-1/3 w-64 h-64 bg-indigo-600/10 rounded-full blur-3xl"></div>
+    </div>
+    <!-- Grid overlay -->
+    <div class="absolute inset-0 hero-grid pointer-events-none" aria-hidden="true"></div>
+
+    <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+      <p class="text-indigo-400 text-sm font-medium tracking-[0.25em] uppercase mb-5"
+         style="animation: fadeIn 0.6s 0.1s both;">
+        Hi, I'm
+      </p>
+      <h1 class="text-6xl sm:text-7xl md:text-8xl font-extrabold text-white mb-5 leading-none tracking-tight"
+          style="animation: fadeUp 0.7s 0.25s both;">
+        Sarah Diaz
+      </h1>
+      <p class="text-2xl md:text-3xl text-gray-400 font-light mb-5"
+         style="animation: fadeUp 0.7s 0.45s both;">
+        Software Engineer
+      </p>
+      <p id="typewriter" class="text-base text-gray-500 mb-12 h-6 min-h-[1.5rem]"
+         style="animation: fadeIn 0.7s 0.65s both;"></p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4"
+           style="animation: fadeUp 0.7s 0.85s both;">
+        <a href="projects.html"
+           class="w-full sm:w-auto px-8 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded-lg transition-all hover:shadow-lg hover:shadow-indigo-500/25 hover:-translate-y-0.5 text-center">
+          View My Work
+        </a>
+        <a href="./Images/SarahDiaz_CompSci_2024.pdf" download
+           class="w-full sm:w-auto px-8 py-3 border border-gray-700 hover:border-indigo-500/60 text-gray-300 hover:text-white font-medium rounded-lg transition-all hover:-translate-y-0.5 text-center">
+          Download Resume
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll arrow -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2" style="animation: fadeIn 1s 1.4s both;">
+      <div class="animate-bounce text-gray-700">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── About ───────────────────────────────────────────────────────────── -->
+  <section id="about" class="py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="reveal">
+        <h2 class="text-3xl font-bold text-white mb-2">About Me</h2>
+        <div class="w-10 h-0.5 bg-indigo-500 rounded-full mb-12"></div>
+
+        <div class="grid md:grid-cols-3 gap-12 items-start">
+          <div class="flex justify-center md:justify-start">
+            <img src="./Images/memoji.jpeg" alt="Sarah Diaz"
+                 class="w-44 h-44 rounded-2xl object-cover border border-gray-800 shadow-xl shadow-black/40">
+          </div>
+          <div class="md:col-span-2 space-y-4 text-gray-400 leading-relaxed text-[15px]">
+            <p>
+              I'm a Computer Science student at
+              <span class="text-white font-medium">New Mexico State University</span>
+              with a passion for building things that make an impact. I thrive at the intersection of creativity
+              and engineering — whether that's developing mixed reality training tools, competing in hackathons,
+              or diving deep into compilers.
+            </p>
+            <p>
+              I've competed in Google Student Developer Club coding competitions (and won 1st place!),
+              attended the <span class="text-white font-medium">Great Minds in STEM</span> conference hackathon
+              in Pasadena, and was selected for the
+              <span class="text-white font-medium">Google Tech Exchange Program</span> — taking courses taught
+              by senior engineers on industry-standard tools and technologies.
+            </p>
+            <p>
+              Most recently, I interned with the
+              <span class="text-indigo-400 font-medium">US Army DEVCOM C5ISR Center</span> in Virginia, where I
+              built mixed reality HoloLens applications to create immersive training simulations for soldiers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Skills ──────────────────────────────────────────────────────────── -->
+  <section id="skills" class="py-24 px-6 bg-[#0c1020]">
+    <div class="max-w-5xl mx-auto">
+      <div class="reveal">
+        <h2 class="text-3xl font-bold text-white mb-2">Skills</h2>
+        <div class="w-10 h-0.5 bg-indigo-500 rounded-full mb-12"></div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Languages -->
+          <div class="bg-[#111827] border border-gray-800/80 rounded-xl p-6 hover:border-indigo-500/40 transition-colors">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-8 h-8 bg-indigo-600/20 rounded-lg flex items-center justify-center">
+                <svg width="15" height="15" fill="none" stroke="#818cf8" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                </svg>
+              </div>
+              <h3 class="text-white font-semibold text-sm">Languages</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">C</span>
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">HTML &amp; CSS</span>
+            </div>
+          </div>
+
+          <!-- Tools & Frameworks -->
+          <div class="bg-[#111827] border border-gray-800/80 rounded-xl p-6 hover:border-indigo-500/40 transition-colors">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-8 h-8 bg-indigo-600/20 rounded-lg flex items-center justify-center">
+                <svg width="15" height="15" fill="none" stroke="#818cf8" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+              </div>
+              <h3 class="text-white font-semibold text-sm">Tools &amp; Frameworks</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">GitHub</span>
+              <span class="skill-tag">Tailwind CSS</span>
+              <span class="skill-tag">Linux</span>
+              <span class="skill-tag">Wireshark</span>
+              <span class="skill-tag">YACC / LEX</span>
+            </div>
+          </div>
+
+          <!-- Technologies -->
+          <div class="bg-[#111827] border border-gray-800/80 rounded-xl p-6 hover:border-indigo-500/40 transition-colors">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-8 h-8 bg-indigo-600/20 rounded-lg flex items-center justify-center">
+                <svg width="15" height="15" fill="none" stroke="#818cf8" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <h3 class="text-white font-semibold text-sm">Technologies</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag">Mixed Reality</span>
+              <span class="skill-tag">HoloLens</span>
+              <span class="skill-tag">Unity</span>
+              <span class="skill-tag">MRTK</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Experience ──────────────────────────────────────────────────────── -->
+  <section id="experience" class="py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="reveal">
+        <h2 class="text-3xl font-bold text-white mb-2">Experience</h2>
+        <div class="w-10 h-0.5 bg-indigo-500 rounded-full mb-12"></div>
+
+        <div class="relative">
+          <!-- Vertical line -->
+          <div class="absolute left-[15px] top-3 bottom-3 w-px bg-gray-800 hidden sm:block" aria-hidden="true"></div>
+
+          <div class="space-y-7">
+
+            <!-- Army internship -->
+            <div class="relative sm:pl-14">
+              <div class="hidden sm:flex absolute left-0 top-2 w-[30px] h-[30px] bg-[#0a0e1a] border-2 border-indigo-500 rounded-full items-center justify-center" aria-hidden="true">
+                <div class="w-2 h-2 bg-indigo-500 rounded-full"></div>
+              </div>
+              <div class="bg-[#111827] border border-gray-800/80 rounded-xl p-6 hover:border-indigo-500/40 transition-colors group">
+                <div class="flex flex-wrap items-start justify-between gap-3 mb-1">
+                  <h3 class="text-white font-semibold group-hover:text-indigo-300 transition-colors">Software Engineering Intern</h3>
+                  <span class="text-xs bg-indigo-950 text-indigo-300 border border-indigo-800/50 px-3 py-1 rounded-full font-medium whitespace-nowrap">Summer 2024</span>
+                </div>
+                <p class="text-indigo-400 text-sm font-medium mb-3">US Army DEVCOM C5ISR Center &middot; Aberdeen, VA</p>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                  Developed mixed reality HoloLens applications to create immersive training simulations for Army soldiers,
+                  enabling safe practice in realistic virtual environments and improving training efficiency.
+                </p>
+              </div>
+            </div>
+
+            <!-- Google Tech Exchange -->
+            <div class="relative sm:pl-14">
+              <div class="hidden sm:flex absolute left-0 top-2 w-[30px] h-[30px] bg-[#0a0e1a] border-2 border-indigo-500 rounded-full items-center justify-center" aria-hidden="true">
+                <div class="w-2 h-2 bg-indigo-500 rounded-full"></div>
+              </div>
+              <div class="bg-[#111827] border border-gray-800/80 rounded-xl p-6 hover:border-indigo-500/40 transition-colors group">
+                <div class="flex flex-wrap items-start justify-between gap-3 mb-1">
+                  <h3 class="text-white font-semibold group-hover:text-indigo-300 transition-colors">Student Developer</h3>
+                  <span class="text-xs bg-indigo-950 text-indigo-300 border border-indigo-800/50 px-3 py-1 rounded-full font-medium whitespace-nowrap">2023</span>
+                </div>
+                <p class="text-indigo-400 text-sm font-medium mb-3">Google Tech Exchange Program &middot; Mountain View, CA</p>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                  Selected for Google's competitive Tech Exchange Program, taking courses taught by senior software engineers
+                  covering industry-standard tools, system design, and software development best practices.
+                </p>
+              </div>
+            </div>
+
+            <!-- GMiS Hackathon -->
+            <div class="relative sm:pl-14">
+              <div class="hidden sm:flex absolute left-0 top-2 w-[30px] h-[30px] bg-[#0a0e1a] border-2 border-indigo-500 rounded-full items-center justify-center" aria-hidden="true">
+                <div class="w-2 h-2 bg-indigo-500 rounded-full"></div>
+              </div>
+              <div class="bg-[#111827] border border-gray-800/80 rounded-xl p-6 hover:border-indigo-500/40 transition-colors group">
+                <div class="flex flex-wrap items-start justify-between gap-3 mb-1">
+                  <h3 class="text-white font-semibold group-hover:text-indigo-300 transition-colors">Hackathon Participant</h3>
+                  <span class="text-xs bg-indigo-950 text-indigo-300 border border-indigo-800/50 px-3 py-1 rounded-full font-medium whitespace-nowrap">2023</span>
+                </div>
+                <p class="text-indigo-400 text-sm font-medium mb-3">Great Minds in STEM (GMiS) Conference &middot; Pasadena, CA</p>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                  Competed in a cybersecurity-focused hackathon involving password hash cracking and real-time
+                  network packet analysis using Wireshark.
+                </p>
+              </div>
+            </div>
+
+            <!-- NMSU Coding Competition -->
+            <div class="relative sm:pl-14">
+              <div class="hidden sm:flex absolute left-0 top-2 w-[30px] h-[30px] bg-[#0a0e1a] border-2 border-indigo-500 rounded-full items-center justify-center" aria-hidden="true">
+                <div class="w-2 h-2 bg-indigo-500 rounded-full"></div>
+              </div>
+              <div class="bg-[#111827] border border-gray-800/80 rounded-xl p-6 hover:border-indigo-500/40 transition-colors group">
+                <div class="flex flex-wrap items-start justify-between gap-3 mb-1">
+                  <h3 class="text-white font-semibold group-hover:text-indigo-300 transition-colors">Coding Competition &mdash; 1st Place</h3>
+                  <span class="text-xs bg-indigo-950 text-indigo-300 border border-indigo-800/50 px-3 py-1 rounded-full font-medium whitespace-nowrap">NMSU</span>
+                </div>
+                <p class="text-indigo-400 text-sm font-medium mb-3">Google Student Developer Club &middot; New Mexico State University</p>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                  Competed alongside my team in a coding competition hosted by the Google Student Developer Club at NMSU,
+                  taking home first place.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ──────────────────────────────────────────────────────────── -->
+  <footer class="border-t border-gray-800/40 py-10 px-6">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-gray-600 text-sm">&copy; 2024 Sarah Diaz</p>
+      <div class="flex items-center gap-6">
+        <a href="mailto:diazsarah30@gmail.com" class="text-gray-500 hover:text-indigo-400 transition-colors text-sm">Email</a>
+        <a href="https://www.linkedin.com/in/sarah-diaz-/" target="_blank" rel="noopener" class="text-gray-500 hover:text-indigo-400 transition-colors text-sm">LinkedIn</a>
+        <a href="https://github.com/SarahDiazZ" target="_blank" rel="noopener" class="text-gray-500 hover:text-indigo-400 transition-colors text-sm">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+</body>
 </html>
