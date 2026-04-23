@@ -1,9 +1,9 @@
 // ── Typewriter effect ──────────────────────────────────────────────────────
 const phrases = [
-  'Building mixed reality experiences.',
-  'Turning ideas into code.',
-  'CS student at NMSU.',
-  'US Army DEVCOM intern alumni.',
+  'Software Engineer @ OroSolutions.',
+  'Building secure fintech products.',
+  'Aspiring Application Security Engineer.',
+  'Turning ideas into code.'
 ];
 
 let phraseIdx = 0, charIdx = 0, deleting = false;
